@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    let array = ['길','우','진','길우','우진','길우진'];
+    let array = ['냥','펀','치','냥펀','펀치','냥펀치'];
 
     let sendData = {
         // 여기서 변수에 하나씩 담아두면됨
