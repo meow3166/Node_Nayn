@@ -63,7 +63,8 @@ const reqeustFilter = (data, type, isHtml, defaultvalue = null) => {
             break;
         default:
             if (type < data.length) {
-                throw "input length is too long";
+                // 디폴트값 없으면 에러
+                throw "input length is too long"; 
             }
 
             if (!isHtml) {

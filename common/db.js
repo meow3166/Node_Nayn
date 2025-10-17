@@ -4,7 +4,7 @@ const db = {
   host: "localhost",
   user: "node_nayn",           // 또는 yuumi 계정
   password: "nayn!",
-  database: "DBnode",   
+  database: "dbnode",   
 };
 
 

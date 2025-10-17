@@ -19,6 +19,22 @@ app.use(express.urlencoded({
 // 정적파일 설정
 app.use('/assets', express.static(__dirname + '/views/assets'));
 
+
+// Session 설정
+const session = require('express-session');
+const sessionFile = require('session-file-store')(session);
+const sessionDB = require('express-mysql-session')(session);
+const db = require('./common/db');
+
+// 실저 session 적용
+app.use(session({
+    secret: "node_nayn",
+    resave: false,
+    // 아무정보없는 세션은 저장 x 
+    saveUninitialized: false,
+    store: new sessionFile({logFn: function() {} })
+}))
+
 // Routing 방법 
 const indexRouter = require('./routers/home');
 const membarRouter = require('./routers/member');
